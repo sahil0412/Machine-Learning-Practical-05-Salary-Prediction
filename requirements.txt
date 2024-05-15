@@ -1,0 +1,12 @@
+numpy
+pandas
+seaborn
+matplotlib
+scikit-learn
+xgboost
+flask
+PyYAML
+gunicorn
+
+# local package install
+-e .

@@ -1,0 +1,7 @@
+README.md
+setup.py
+ClassificationProject.egg-info/PKG-INFO
+ClassificationProject.egg-info/SOURCES.txt
+ClassificationProject.egg-info/dependency_links.txt
+ClassificationProject.egg-info/requires.txt
+ClassificationProject.egg-info/top_level.txt
