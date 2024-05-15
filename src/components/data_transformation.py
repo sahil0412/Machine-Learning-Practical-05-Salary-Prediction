@@ -22,63 +22,14 @@ class DataTransformation:
     def __init__(self):
         self.data_transformation_config=DataTransformationConfig()
         
-    # def get_data_transformation_object(self):
-    #     try:
-    #         logging.info('Data Transformation initiated')
-    #         # Define which columns should be ordinal-encoded and which should be scaled
-    #         categorical_cols=["education","workclass","marital.status","occupation","relationship","race","sex","native.country"]
-    #         numerical_cols=["age","fnlwgt","education.num","capital.gain","capital.loss","hours.per.week"]
-            
-    #         preprocessing_data = {}
-    #         # Fit and transform the categorical columns
-    #         for column in categorical_cols:
-    #             l_encoder = LabelEncoder()
-    #             X_train[column] = l_encoder.fit_transform(X_train[column])
-    #             preprocessing_data[f'{column}_label_encoder'] = l_encoder
+    def convert_income_level(self, income_level):
+        if income_level == '<=50K':
+            return 0
+        elif income_level == '>50K':
+            return 1
+        else:
+            return None  # Handle other cases if necessary
 
-    #         # Fit and transform the numerical columns
-    #         imputer = SimpleImputer(strategy='median')
-    #         scaler = StandardScaler()
-            
-            
-            
-            
-            
-            
-    #         # Define the custom ranking for each ordinal variable
-    #         sex_categories = ['male', 'female']
-    #         embarked_categories = ['S', 'C', 'Q']
-            
-    #         logging.info('Pipeline Initiated')
-
-    #         ## Numerical Pipeline
-    #         num_pipeline=Pipeline(
-    #             steps=[
-    #             ('imputer',SimpleImputer(strategy='median')),
-    #             ('scaler',StandardScaler())
-    #             ]
-    #         )
-
-    #         # Categorigal Pipeline
-    #         cat_pipeline=Pipeline(
-    #             steps=[
-    #             ('imputer',SimpleImputer(strategy='most_frequent')),
-    #             ('ordinalencoder',OrdinalEncoder(categories=[sex_categories, embarked_categories])),
-    #             ('scaler',StandardScaler())
-    #             ]
-    #         )
-
-    #         preprocessor=ColumnTransformer([
-    #         ('num_pipeline',num_pipeline,numerical_cols),
-    #         ('cat_pipeline',cat_pipeline,categorical_cols)
-    #         ])
-            
-    #         logging.info('Pipeline Completed')
-    #         return preprocessor            
-
-    #     except Exception as e:
-    #         logging.info("Error in Data Trnasformation")
-    #         raise CustomException(e,sys)
         
     def initaite_data_transformation(self,train_path,test_path):
         try:
@@ -92,9 +43,13 @@ class DataTransformation:
 
             logging.info('Seprate Dependent and Independent Varables')
             
+            # Changing depending variable to be 0 or 1
+            target_column_name = 'income'
+            train_df[target_column_name] = train_df[target_column_name].map(self.convert_income_level)
+            test_df[target_column_name] = test_df[target_column_name].map(self.convert_income_level)
             # preprocessing_obj = self.get_data_transformation_object()
 
-            target_column_name = 'income'
+            
             drop_columns = [target_column_name]
 
             input_feature_train_df = train_df.drop(columns=drop_columns,axis=1)
