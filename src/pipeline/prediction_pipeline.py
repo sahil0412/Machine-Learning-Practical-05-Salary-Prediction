@@ -21,8 +21,8 @@ class PredictPipeline:
             ## DO Preprocessig of I/P features before passing for Imputing
             
             ## Data preprocessing
-            categorical_features=["education","workclass","marital.status","occupation","relationship","race","sex","native_country"]
-            numerical_features=["age","fnlwgt","education_num","capital_gain","capital_loss","hours_per_week"]
+            categorical_features=["education","workclass","marital.status","occupation","relationship","race","sex","native.country"]
+            numerical_features=["age","fnlwgt","education.num","capital.gain","capital.loss","hours.per.week"]
             
             data_scaled = pd.DataFrame()
             for column in categorical_features:
@@ -83,16 +83,16 @@ class CustomData:
                 'workclass':[self.workclass],
                 'fnlwgt':[self.fnlwgt],
                 'education':[self.education],
-                'education_num':[self.education_num],
-                'marital_status':[self.marital_status],
+                'education.num':[self.education_num],
+                'marital.status':[self.marital_status],
                 'occupation':[self.occupation],
                 'relationship':[self.relationship],
                 'race':[self.race],
                 'sex':[self.sex],
-                'capital_gain':[self.capital_gain],
-                'capital_loss':[self.capital_loss],
-                'hours_per_week':[self.hours_per_week],
-                'native_country':[self.native_country]
+                'capital.gain':[self.capital_gain],
+                'capital.loss':[self.capital_loss],
+                'hours.per.week':[self.hours_per_week],
+                'native.country':[self.native_country]
             }
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe Gathered')

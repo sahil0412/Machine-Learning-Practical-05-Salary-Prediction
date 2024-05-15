@@ -1,0 +1,79 @@
+<html>
+<body>
+<form action="{{url_for('predict_datapoint')}}" method="POST">
+    <div class="form-group">
+        <label for="age">age:</label>
+        <input type="text" id="age" name="age" placeholder="Enter age value (float)">
+    </div>
+
+    <div class="form-group">  
+        <label for="fnlwgt">fnlwgt:</label>
+        <input type="text" id="fnlwgt" name="fnlwgt" placeholder="Enter fnlwgt value (float)">
+    </div>
+
+    <div class="form-group">
+      <label for="education_num">education_num</label>
+      <input type="text" id="education_num" name="education_num" placeholder="Enter education_num value (float)">
+    </div>
+    
+    <div class="form-group">
+        <label for="capital_gain">capital_gain:</label>
+        <input type="text" id="capital_gain" name="capital_gain" placeholder="Enter capital_gain value (float)">
+    </div>
+  
+    <div class="form-group">
+        <label for="capital_loss">capital_loss:</label>
+        <input type="text" id="capital_loss" name="capital_loss" placeholder="Enter capital_loss value (float)">
+    </div>
+  
+    <div class="form-group">
+        <label for="hours_per_week">hours_per_week:</label>
+        <input type="text" id="hours_per_week" name="hours_per_week" placeholder="Enter hours_per_week value (float)">
+    </div>         
+  
+    <div class="form-group">
+      <label for="workclass">workclass:</label>
+      <input type="text" id="workclass" name="workclass" placeholder="Enter workclass (str)">
+    </div>   
+
+    <div class="form-group">
+      <label for="education">education:</label>
+      <input type="text" id="education" name="education" placeholder="Enter education (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="marital_status">marital_status:</label>
+      <input type="text" id="marital_status" name="marital_status" placeholder="Enter marital_status (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="occupation">occupation:</label>
+      <input type="text" id="occupation" name="occupation" placeholder="Enter occupation (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="relationship">relationship:</label>
+      <input type="text" id="relationship" name="relationship" placeholder="Enter relationship (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="race">race:</label>
+      <input type="text" id="race" name="race" placeholder="Enter race (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="sex">sex:</label>
+      <input type="text" id="sex" name="sex" placeholder="Enter sex (str)">
+    </div>
+    
+    <div class="form-group">
+      <label for="native_country">native_country:</label>
+      <input type="text" id="native_country" name="native_country" placeholder="Enter native_country (str)">
+    </div>
+    
+
+<div style="clear:both;"></div>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
