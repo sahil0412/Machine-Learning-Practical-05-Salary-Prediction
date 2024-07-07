@@ -115,5 +115,4 @@ Next Step are :-<br>
 a. we can work on mobile application<br>
 
 ## Deployable Link
-https://machine-learning-practical-04-boston.onrender.com/predict
-git remote set-url https://github.com/sahil0412/Machine-Learning-Practical-05-Salary-Prediction.git
+https://machine-learning-practical-05-salary.onrender.com/predict
